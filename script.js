@@ -49,11 +49,11 @@ class LinkedList {
   }
 
   print() {
-    const current = this.head;
+    let current = this.head;
 
     while (current) {
       console.log(current);
-      current = this.nextNode;
+      current = current.nextNode;
     }
   }
 
@@ -142,22 +142,6 @@ class LinkedList {
       throw new Error(`Index out of bounds`);
     }
 
-    // const removeNode = this.at(index);
-
-    // if (index === 0) {
-    //   removeNode.nextNode.prevNode = null;
-    //   this.head = removeNode.nextNode;
-    //   removeNode.nextNode = null;
-    // } else if (index === this.#size - 1) {
-    //   removeNode.prevNode.nextNode = null;
-    //   this.tail = removeNode.prevNode;
-    //   removeNode.prevNode = null;
-    // } else {
-    //   removeNode.prevNode.nextNode = removeNode.nextNode;
-    //   removeNode.nextNode = removeNode.prevNode;
-    // }
-    // this.#size--;
-
     let removeNode;
 
     if (index === 0) {
@@ -180,7 +164,6 @@ class LinkedList {
   }
 }
 
-//test
 let fullList = new LinkedList();
 fullList.append('test1');
 fullList.append('test2');
@@ -190,4 +173,5 @@ fullList.append('test5');
 
 fullList.removeAt(2);
 fullList;
+fullList.print();
 // fullList.toString();
